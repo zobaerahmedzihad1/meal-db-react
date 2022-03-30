@@ -1,10 +1,24 @@
 import React from "react";
-import { Button, Card, Col } from "react-bootstrap";
+import {Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Food.css";
 
 const Food = ({ food }) => {
-
+  // const showDetails = () => {
+  //      console.log("clicked");
+  // }
+  // console.log(food);
+  const { strMeal, strMealThumb , idMeal} = food;
+  return (
+    <Col Lin md={4} className="mb-4 cursor-pointer">
+      <div className="card">
+        <div className="image">
+          <img style={{ width: "300px" }} src={strMealThumb} alt="" />
+        </div>
+        <h5>Name : {strMeal} </h5>
+        <Link to={`/food/${idMeal}`}>Show Details</Link>
+      </div>
+    </Col>
   );
 };
 
